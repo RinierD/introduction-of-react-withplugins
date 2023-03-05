@@ -1,0 +1,8 @@
+button{
+    color:white;
+    background-color: rgb(39, 53, 48);
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 10px;
+}

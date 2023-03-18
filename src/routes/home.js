@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieComponent from "../components/movie_components.js";
+import styles from "./home.module.css";
 function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
@@ -30,15 +31,18 @@ function Home() {
   //       });
   //   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loader}>
+          <span>Loading...</span>
+        </div>
       ) : (
-        <div>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <MovieComponent
               key={movie.id}
               id={movie.id}
+              year={movie.year}
               coverImg={movie.medium_cover_image} // I've change the props name with the shorter one "coverImg"
               title={movie.title}
               summary={movie.summary}
